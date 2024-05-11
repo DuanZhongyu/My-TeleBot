@@ -1,17 +1,17 @@
 # Created 2024.04.27
-# by 段仲彧
+# by 彧同学
 
 # 功能 1 —— # 调查问卷以及药物推荐
 # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 import bot
 import func
 
-last_msg_id_01_01 = None  # 问卷提问
-last_msg_id_01_02 = None  # 用药建议
+last_msg_id_01_01 = None
+last_msg_id_01_02 = None
 
 user_answers = []
-score = 0  # 累计分数
-index = 0  # 问题索引
+score = 0
+index = 0
 lock = 0
 
 last_reply_message_01_id_01 = None
@@ -48,10 +48,10 @@ last_reply_message_04_id_05 = None
 last_reply_message_04_id_06 = None
 
 
-def start1_01(chat_id):  # 发送第一个问题
+def start1_01(chat_id):
     global last_msg_id_01_01, score, index
-    score = 0  # 累计分数
-    index = 0  # 问题索引
+    score = 0
+    index = 0
 
     last_msg_id_01_01 = bot.main_bot.send_message(chat_id=chat_id,
                                                   text=f'Ответьте на вопрос *(1/9)*:\n\n'
@@ -64,7 +64,6 @@ def start1_01(chat_id):  # 发送第一个问题
                                      call.data == '1' or call.data == '2' or
                                      call.data == '3' or call.data == '4')
 def start1_02(call):
-    # 如果改变变量的话，则必须写 global，如果不改变只使用的话，则不写
     global score, index, last_msg_id_01_02
 
     if call.data != '4':
@@ -175,8 +174,8 @@ def start1_04(call):
                                        text=f'{func.ending_words[1]}\n'  # 感谢完使用此功能
                                             f'{func.ending_words[3]}')  # 很高兴可以帮助到你
     elif call.data == '8':
-        score = 0  # 累计分数
-        index = 0  # 问题索引
+        score = 0
+        index = 0
 
         bot.main_bot.edit_message_text(chat_id=call.message.chat.id,
                                        message_id=last_msg_id_01_01,
