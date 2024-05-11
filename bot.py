@@ -4,8 +4,8 @@
 import telebot
 
 # 彧同学
-API_KEY_01 = '6874674803:AAHe_e0O5NnfbdOFbpGqyHMi2DzVvV_-Nl0'
+API_KEY_01 = '您自己的机器人API'
 
 # 最终作品 —— Чатбот ПсихПартнер
-API_KEY_02 = '7021437836:AAFyvJrdPZMHycmPkh9O-wRPZ8r2-xHpKlw'
+API_KEY_02 = '您自己的机器人API'
 main_bot = telebot.TeleBot(API_KEY_01)
